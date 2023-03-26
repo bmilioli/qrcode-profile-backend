@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>QR code image generator</title>
+</head>
+
+<body>
+    <h1>QR code image generator</h1>
+
+    <form method="post" action="/generate" onsubmit="event.preventDefault(); sendData();">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required><br><br>
+
+        <label for="linkedin">Linkedin URL:</label>
+        <input type="url" name="linkedin" id="linkedin" required><br><br>
+
+        <label for="github">Github URL:</label>
+        <input type="url" name="github" id="github" required><br><br>
+
+        <input type="submit" value="Generate Image">
+    </form>
+    <script>
+        function sendData() {
+            const name = document.getElementById("name").value;
+            const linkedin = document.getElementById("linkedin").value;
+            const github = document.getElementById("github").value;
+
+            const data = { name, linkedin, github };
+            const options = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            };
+
+            fetch("/generate", options)
+                .then(res => res.json())
+                .then(data => console.log(data));
+        }
+    </script>
+
+
+
+</body>
+
+</html>
