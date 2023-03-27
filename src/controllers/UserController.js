@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const { generateQRCode } = require("../services/generateQR");
 const { generateCanvas } = require("../services/generateCanvas");
+const path = require('path');
 
 //Register user
 const register = async (req, res) => {
@@ -39,6 +40,16 @@ const register = async (req, res) => {
       })
       .catch((err) => console.log(`Error generating QR code: ${err}`));
   }
+
+  /*  let canvasPath = path.join(__dirname, '..', 'data', `qr-${name}.png`);
+   res.sendFile(canvasPath, (err) => {
+     if (err) {
+       console.log(`Error sending file: ${err}`);
+       res.status(500).send({ message: 'Error sending file' });
+     } else {
+       console.log(`File sent: ${canvasPath}`);
+     }
+   }); */
 };
 
 const getCurrentUser = async (req, res) => {
