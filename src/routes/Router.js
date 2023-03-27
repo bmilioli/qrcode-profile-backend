@@ -1,13 +1,15 @@
-const express = require('express')
-const router = express()
+const express = require("express");
+const router = express();
+
+router.use("/api/users", require("./UserRoutes"));
 
 // Defining the routes
-router.get('/', (req, res) => {
-    res.sendFile('index.html', { root: './src/views' })
-})
+router.get("/", (req, res) => {
+  res.send("Server is up and running");
+});
 
-router.post('/generate', (req, res) => {
-    console.log(req.body)
-})
+router.post("/generate", (req, res) => {
+  console.log(req.body);
+});
 
-module.exports = router
+module.exports = router;
