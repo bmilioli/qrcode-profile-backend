@@ -64,7 +64,7 @@ const getAllUsers = async (req, res) => {
 
 // Get QRCode
 const getQRCode = async (req, res) => {
-  const { name } = req.body;
+  const { name } = req.query;
   let canvasPath = path.join(__dirname, "..", "data", `canvas-${name}.png`);
   res.sendFile(canvasPath, (err) => {
     if (err) {
