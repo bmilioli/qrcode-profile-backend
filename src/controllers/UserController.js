@@ -43,7 +43,7 @@ const register = async (req, res) => {
 
 // Get current user
 const getCurrentUser = async (req, res) => {
-  const { name } = req.body;
+  const { name } = req.query;
   const currentUser = await User.findOne({ name });
   if (currentUser) {
     res.status(200).json({ currentUser });
