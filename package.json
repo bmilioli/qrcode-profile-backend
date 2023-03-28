@@ -2,9 +2,9 @@
   "name": "skill-test-node",
   "version": "1.0.0",
   "description": "Skill test for a backend job in Buzzvel",
-  "main": "./src/seerver.js",
+  "main": "./src/app.js",
   "scripts": {
-    "start": "node ./src/server.js",
+    "start": "node ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

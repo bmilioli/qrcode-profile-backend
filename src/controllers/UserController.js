@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const { generateQRCode } = require("../services/generateQR");
 const { generateCanvas } = require("../services/generateCanvas");
-const path = require('path');
+const path = require("path");
 
 //Register user
 const register = async (req, res) => {
@@ -31,8 +31,7 @@ const register = async (req, res) => {
     res.status(200).json({ message: "User updated" });
   }
 
-  // If user is created generate QRCode
-
+  // If user is created generate or updated QRCode and canvas
   if (user || newUser) {
     generateQRCode(name)
       .then(() => {
@@ -40,18 +39,9 @@ const register = async (req, res) => {
       })
       .catch((err) => console.log(`Error generating QR code: ${err}`));
   }
-
-  /*  let canvasPath = path.join(__dirname, '..', 'data', `qr-${name}.png`);
-   res.sendFile(canvasPath, (err) => {
-     if (err) {
-       console.log(`Error sending file: ${err}`);
-       res.status(500).send({ message: 'Error sending file' });
-     } else {
-       console.log(`File sent: ${canvasPath}`);
-     }
-   }); */
 };
 
+// Get current user
 const getCurrentUser = async (req, res) => {
   const { name } = req.body;
   const currentUser = await User.findOne({ name });
@@ -62,6 +52,7 @@ const getCurrentUser = async (req, res) => {
   }
 };
 
+// Get all users
 const getAllUsers = async (req, res) => {
   const users = await User.find({});
   if (users) {
@@ -71,4 +62,18 @@ const getAllUsers = async (req, res) => {
   }
 };
 
-module.exports = { register, getCurrentUser, getAllUsers };
+// Get QRCode
+const getQRCode = async (req, res) => {
+  const { name } = req.body;
+  let canvasPath = path.join(__dirname, "..", "data", `canvas-${name}.png`);
+  res.sendFile(canvasPath, (err) => {
+    if (err) {
+      console.log(`Error sending file: ${err}`);
+      res.status(500).send({ message: "Error sending file" });
+    } else {
+      console.log(`File sent: ${canvasPath}`);
+    }
+  });
+};
+
+module.exports = { register, getCurrentUser, getAllUsers, getQRCode };
