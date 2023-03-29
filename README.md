@@ -8,7 +8,7 @@ This applications was made by Bruno Milioli for an aplicattion to a job intervie
 ## Deploys
 
 This application is deployed in heroku and can be accesse the backend in: https://qrcode-profile-backend.herokuapp.com/
-and the frontend in: https://qrcode-profile-frontend.herokuapp.com/
+and the frontend in: https://qrcode-profile-frontend.herokuapp.com/. Bouth was deployed using docker.
 
 All the data is stored in a mongoDB database in mlab
 
@@ -31,5 +31,7 @@ You need to create a .env file in the root of the project like the .env.example 
 the url of the frontend application in the CLIENT_URL variable.
 
 After that you need to clone this repository and install the dependencies with the following command:
-`npm install`
-`npm start`
+
+### `npm install`
+
+### `npm start`
