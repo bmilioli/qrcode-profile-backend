@@ -1,6 +1,7 @@
 const { createCanvas, loadImage } = require("canvas");
 const fs = require("fs");
 
+
 //Generate canvas for user
 const generateCanvas = async (name) => {
   const width = 735;
