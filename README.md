@@ -35,3 +35,10 @@ After that you need to clone this repository and install the dependencies with t
 ### `npm install`
 
 ### `npm start`
+
+## Docker 
+
+You can start the app using docker. 
+for this run the command:
+
+### `docker build -t qrcode-profile-backend`
