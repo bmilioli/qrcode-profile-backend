@@ -12,7 +12,7 @@ and the frontend in: https://qrcode-profile-frontend.herokuapp.com/
 
 All the data is stored in a mongoDB database in mlab
 
-If you want to see all the entries in the database you can go to: https://qrcode-profile-backend.herokuapp.com/users/all
+If you want to see all the entries in the database you can go to: https://qrcode-profile-backend.herokuapp.com/api/users/all
 
 ## Technologies
 
