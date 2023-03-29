@@ -8,7 +8,7 @@ const generateQRCode = async (name) => {
   return new Promise((resolve, reject) => {
     QRCode.toFile(
       `./src/data/qr-${name}.png`,
-      `${process.env.CLIENT_URL}/profile/name}`,
+      `${process.env.CLIENT_URL}/profile/${name}`,
       {
         color: {
           dark: "#000", // Blue dots

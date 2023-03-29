@@ -6,18 +6,14 @@ WORKDIR /app
 
 # Coping package.json and package-lock.json
 COPY package*.json ./
-COPY .env ./
-ENV $(cat /.env | xargs)
 
-
-# instaling dependencies
-RUN npm install
-
-# Coping source code
+# Installing dependencies
+RUN npm install 
+# Copying source code
 COPY . .
 
-# exposing port
+# Exposing port
 EXPOSE 5000
 
-# starting app
+# Starting app
 CMD [ "npm", "start" ]

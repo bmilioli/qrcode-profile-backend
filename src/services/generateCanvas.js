@@ -1,7 +1,6 @@
 const { createCanvas, loadImage } = require("canvas");
 const fs = require("fs");
 
-
 //Generate canvas for user
 const generateCanvas = async (name) => {
   const width = 735;
@@ -11,7 +10,7 @@ const generateCanvas = async (name) => {
   //Define the title
   const title = name;
 
-  ctx.font = "bold 48px sans-serif";
+  ctx.font = "bold 48px DejaVu Sans";
   ctx.textAlign = "center";
   ctx.fillStyle = "#FFFFFF";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
