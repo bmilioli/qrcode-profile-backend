@@ -3,7 +3,7 @@
 For the frotend git repository go to: https://github.com/bmilioli/qrcode-profile-frontend
 
 This is the API Rest for generate QRCode profiles
-This applications was made by Bruno Milioli for an aplicattion to a job interview in buzzvel
+This applications was made by Bruno Milioli for test proposes. 
 
 ## Deploys
 
